@@ -17,7 +17,6 @@ import kotlinx.coroutines.launch
 import org.json.JSONArray
 import org.json.JSONObject
 import kotlin.coroutines.suspendCoroutine
-import kotlinx.android.synthetic.main.fragment_remote_landing.*
 
 @AndroidEntryPoint
 class RemoteLandingFragment : Fragment() {
@@ -79,8 +78,6 @@ class RemoteLandingFragment : Fragment() {
     suspend fun fire(k : Int) = suspendCoroutine<String> { cont ->
         val queue = Volley.newRequestQueue(context)
         val url = "http://$ip:9998/jsonrpc"
-
-
         val basePayload = JSONObject()
 
         basePayload.put("jsonrpc", "2.0")
