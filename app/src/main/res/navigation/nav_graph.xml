@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/startScannerFragment">
+
+    <fragment
+        android:id="@+id/scannerFragment"
+        android:name="com.sdtv.rdkremote.ui.ScannerFragment"
+        android:label="fragment_scanner"
+        tools:layout="@layout/fragment_scanner" >
+        <action
+            android:id="@+id/action_scannerFragment_to_remoteLandingFragment"
+            app:destination="@id/remoteLandingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/remoteLandingFragment"
+        android:name="com.sdtv.rdkremote.ui.RemoteLandingFragment"
+        android:label="RemoteLandingFragment" >
+        <argument
+            android:name="box_ip"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/startScannerFragment"
+        android:name="com.sdtv.rdkremote.ui.StartScannerFragment"
+        android:label="fragment_start_scanner"
+        tools:layout="@layout/fragment_start_scanner" >
+        <action
+            android:id="@+id/action_startScannerFragment_to_scannerFragment"
+            app:destination="@id/scannerFragment" />
+    </fragment>
+</navigation>
